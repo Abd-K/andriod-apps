@@ -1,0 +1,29 @@
+1398821907338	Copy file
+1398822812611	Rename resource 'Grid.xml'
+1398822841136	Delete element
+1398822857876	Copy file
+1398822998527	Delete elements
+1398898399011	Rename method 'Grid_Mines'
+1398898417656	Rename field 'Board_Col'
+1398898426981	Rename field 'Board_Row'
+1398898441058	Rename field 'Board_Size'
+1398898477707	Rename field 'board_2D'
+1398898485356	Rename field 'board_1D'
+1398898500759	Rename field 'board_1D_text'
+1398898543878	Rename method 'adjacent_number'
+1398898558757	Rename method 'add_adjacent'
+1398898574044	Rename method 'Convert_1D_2D'
+1398898586988	Rename method 'convert_2D_1D'
+1398898657398	Rename method 'open_cell'
+1398898673420	Rename method 'adjacent_empty'
+1398898682051	Rename method 'open_adjacent'
+1398898716021	Rename method 'game_over'
+1398898983629	Rename field 'Area_Mines'
+1398899029889	Rename method 'Set_Mine'
+1398899041910	Rename method 'Get_Mine'
+1398899056599	Rename method 'Set_Open'
+1398899065618	Rename method 'Get_Open'
+1398899073634	Rename method 'Add_Area'
+1398899085649	Rename method 'Get_Area'
+1398899749592	Delete element
+1398902340319	Delete element

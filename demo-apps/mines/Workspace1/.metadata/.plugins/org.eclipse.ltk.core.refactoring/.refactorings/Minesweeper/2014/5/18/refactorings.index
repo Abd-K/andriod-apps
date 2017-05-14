@@ -1,0 +1,18 @@
+1398988119270	Rename method 'gridMines'
+1398994393656	Rename method 'new1dBoards'
+1399029778198	Delete element
+1399030845382	Rename field 'sharedrow'
+1399030859330	Rename field 'sharedcol'
+1399030904643	Rename field 'sharedmine'
+1399030909964	Rename field 'selectedmine'
+1399031235344	Rename type 'MainActivity'
+1399034555295	Rename type 'MineSweeper'
+1399042668380	Move folder
+1399042738009	Delete element
+1399048845799	Rename resource 'off.png'
+1399048862406	Rename resource 'on.png'
+1399051906497	Delete element
+1399051910619	Delete element
+1399051915500	Delete element
+1399052477829	Rename resource 'No_sign.png'
+1399062782174	Rename field 'factor'

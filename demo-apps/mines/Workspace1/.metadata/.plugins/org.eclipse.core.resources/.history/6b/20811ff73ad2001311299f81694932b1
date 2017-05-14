@@ -1,0 +1,147 @@
+package com.example.minesweeper;
+
+import android.app.Activity;
+import android.content.Intent;
+import android.content.SharedPreferences;
+import android.os.Bundle;
+import android.view.View;
+import android.view.View.OnClickListener;
+import android.widget.Button;
+import android.widget.RadioButton;
+import android.widget.RadioGroup;
+import android.widget.Toast;
+
+public class MainMenu extends Activity implements OnClickListener  {
+
+	public Button beg,inter,adv;
+	private RadioGroup difficulty, sound, timed;
+	private RadioButton easy, challenging, timedOn, timedOff, soundOn, soundOff;
+	
+	private final String selectedRow = "selectedRow";
+	private final String selectedCol = "selectedCol";
+	private final String selectedMine = "selectedMine";
+	private final String selectedTime = "selectedTime";
+	
+	private int mineFactor = 2;
+	 SharedPreferences pref;
+	 
+
+	@Override
+	public void onCreate(Bundle abby) {
+		
+		// TODO Auto-generated method stub
+		super.onCreate(abby);
+		setContentView(R.layout.menu);
+
+		beg = (Button) findViewById(R.id.beginner);
+		inter = (Button) findViewById(R.id.intermediate);
+		adv = (Button) findViewById(R.id.advanced);
+		
+		easy = (RadioButton) findViewById(R.id.easy);
+		challenging = (RadioButton) findViewById(R.id.challenging);
+		difficulty = (RadioGroup) findViewById(R.id.difficulty);
+		
+		soundOn = (RadioButton) findViewById(R.id.soundOn);
+		soundOff = (RadioButton) findViewById(R.id.soundOff);
+		sound = (RadioGroup) findViewById(R.id.sound);
+		
+		timedOn = (RadioButton) findViewById(R.id.timedOn);
+		timedOff = (RadioButton) findViewById(R.id.timedOff);
+		timed = (RadioGroup) findViewById(R.id.timed);
+		
+		 pref = MainMenu.this.getSharedPreferences("pref", 0);
+		
+		 
+		 Toast display = Toast.makeText(this, "Choose Your preferred game difficulty", Toast.LENGTH_LONG);
+			display.show();
+	
+		beg.setOnClickListener(this);		
+		inter.setOnClickListener(this);
+		adv.setOnClickListener(this); 
+		
+		difficulty.setOnClickListener(this);
+		easy.setOnClickListener(this);
+		challenging.setOnClickListener(this);
+		
+		sound.setOnClickListener(this);
+		soundOff.setOnClickListener(this);
+		soundOn.setOnClickListener(this);
+		
+		timed.setOnClickListener(this);
+		timedOn.setOnClickListener(this);
+		timedOff.setOnClickListener(this);
+		
+	}
+	
+
+	   public void onClick(View v) {
+		   
+		   SharedPreferences.Editor editor1 = pref.edit();
+		   Intent returnBtn =  new Intent(getApplicationContext(),
+                   Minesweeper.class);
+		   
+
+	       switch(v.getId()) {
+	       		case R.id.timedOn:
+	       			editor1.putBoolean(selectedTime, true);
+	      			break;
+	       		case R.id.timedOff:
+	       			editor1.putBoolean(selectedTime, false);
+	      			break;
+	       		case R.id.soundOn:
+	       			mineFactor = 2;
+	       			break;
+	       		case R.id.soundOff:
+	       			mineFactor = 3;
+	       			break;
+	       		case R.id.easy:
+	       			mineFactor = 2;
+	       			break;
+	       		case R.id.challenging:
+	       			mineFactor = 3;
+	       			break;
+	           case R.id.beginner:
+
+	        	   editor1.putInt(selectedRow, 6);
+	        	   editor1.putInt(selectedCol, 6);
+	        	   editor1.putInt(selectedMine, mineFactor*6);
+	        	   
+	        	   editor1.commit();  
+	        	   startActivity(returnBtn);
+	       
+	           break;
+	           case R.id.intermediate:    
+	        	   
+	        	   editor1.putInt(selectedRow, 12);
+	        	   editor1.putInt(selectedCol, 12);
+	        	   editor1.putInt(selectedMine, mineFactor*12);
+	        	   
+	        	   editor1.commit();  
+	        	   startActivity(returnBtn);
+	           break;
+	           case R.id.advanced:
+
+	        	   
+	        	   editor1.putInt(selectedRow, 20);
+	        	   editor1.putInt(selectedCol, 20);
+	        	   editor1.putInt(selectedMine, mineFactor*20);
+	        	   
+	        	   editor1.commit();  
+	        	   startActivity(returnBtn);
+	        
+	        	   break;
+	        	   
+	       }
+
+			
+	       }
+
+@Override
+	protected void onPause() {
+		// TODO Auto-generated method stub
+		super.onPause();
+		finish();
+	}
+
+}
+	

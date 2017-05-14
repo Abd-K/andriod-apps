@@ -1,0 +1,36 @@
+package com.example.minesweeper;
+
+import android.content.Context;
+import android.util.AttributeSet;
+
+public class Board {
+	boolean Open = false;
+	boolean Mine = false;
+	private int Area_Mines= 0;
+	
+
+	public void Set_Mine(){
+		Mine=true;
+	}
+	
+	public boolean Get_Mine(){
+		return Mine;
+	}
+	
+	public void Set_Open(){
+		Open = true;
+	}
+	
+	public boolean Get_Open(){
+		return Open;
+	}
+	
+	public void Add_Area(){
+		Area_Mines++;
+		
+	}
+
+	public int Get_Area(){
+		return Area_Mines;
+	}
+}
